@@ -22,7 +22,7 @@ A simple Docker Compose project that runs a MySQL server along with phpMyAdmin f
 ````bash
 git clone https://github.com/yourusername/mysql-container.git
 cd mysql-container
-```
+````
 
 ### 2. Create a `.env` file
 
