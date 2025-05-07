@@ -1,28 +1,21 @@
-version: '3.8'
-name: docker-phpmyadmin
-
 services:
   db:
-    image: mysql:latest
+    image: mysql
     container_name: mysql
-    platform: linux/amd64
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_USER: ${MYSQL_USER:-user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-${MYSQL_USER}}
     ports:
       - "3306:3306"
     volumes:
-      - mysql:/var/lib/mysql
+      - "./data:/var/lib/mysql"
   phpmyadmin:
-    image: phpmyadmin:latest
+    image: phpmyadmin
     container_name: phpmyadmin
-    platform: linux/amd64
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+    restart: unless-stopped
     ports:
-      - 80:80
-volumes:
-  mysql:
+      - 8080:80
