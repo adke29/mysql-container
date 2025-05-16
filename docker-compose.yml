@@ -1,5 +1,5 @@
 services:
-  db:
+  mysql:
     image: mysql
     container_name: mysql
     environment:
@@ -18,4 +18,4 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     restart: unless-stopped
     ports:
-      - 8080:80
+      - 8081:80
