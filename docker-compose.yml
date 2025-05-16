@@ -18,4 +18,4 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     restart: unless-stopped
     ports:
-      - 8081:80
+      - 127.0.0.1:8081:80
