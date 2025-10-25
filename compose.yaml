@@ -3,9 +3,10 @@ services:
     image: mysql
     container_name: mysql
     environment:
+      TZ: ${TZ:-UTC}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
-      MYSQL_USER: ${MYSQL_USER:-user}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}}
+      MYSQL_USER: ${MYSQL_USER:-mysql}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-mysql}}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-${MYSQL_USER}}
     ports:
       - "3306:3306"
