@@ -1,4 +1,4 @@
-# mysql-container
+# [DEPRECATED] mysql-container
 
 A simple Docker Compose project that runs a MySQL server along with phpMyAdmin for easy database management. Configuration is managed via a `.env` file for flexibility and security.
 
